@@ -14,8 +14,10 @@ CREATE TABLE
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         name VARCHAR(255) NOT NULL,
-        weapon VARCHAR(255) NOT NULL
-    );
+        weapon VARCHAR(255) NOT NULL,
+        creatorId VARCHAR(255) NOT NULL,
+        FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE
+    ) default charset utf8;
 
 CREATE TABLE
     IF NOT EXISTS castles(
@@ -23,11 +25,11 @@ CREATE TABLE
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         name VARCHAR(255) NOT NULL
-    );
+    ) default charset utf8;
 
 /* Create */
 
-INSERT INTO knights (name, weapon) VALUES ("John Snow", "Dragon");
+INSERT INTO knights (name, weapon) VALUES ("Sir Owen", "Mace");
 
 INSERT INTO castles (name) VALUES ("Raven's Bluff ");
 
@@ -66,3 +68,13 @@ UPDATE castles SET name = "Tyler Castle" WHERE id=2 ;
 DELETE FROM knights WHERE id=3 LIMIT 1;
 
 DELETE FROM castles WHERE id=1 LIMIT 1;
+
+/* SECTION DANGER ZONE!!! */
+
+/* With no WHERE statement all values will be deleted */
+
+DELETE FROM knights;
+
+/* Remove entire table and all data*/
+
+DROP TABLE knights;
