@@ -6,8 +6,12 @@ namespace KnightsTale.Models
 
         public string Name { get; set; }
 
+        public string CreatorId { get; set; }
+
         public string Weapon { get; set; }
 
+
+        public Profile Creator { get; set; }
 
     }
 
