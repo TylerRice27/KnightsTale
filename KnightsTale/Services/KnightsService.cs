@@ -21,7 +21,7 @@ namespace KnightsTale.Services
 
         internal List<Knight> Get()
         {
-
+            return _repo.Get();
         }
 
         internal Knight Get(int id)
