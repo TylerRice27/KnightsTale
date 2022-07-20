@@ -18,6 +18,21 @@ namespace KnightsTale.Services
         {
             throw new NotImplementedException();
         }
+
+        internal Knight Create(Knight knightData)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal Knight Edit(object knightData)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal Knight Delete(int id1, string id2)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
