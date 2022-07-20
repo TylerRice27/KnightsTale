@@ -3,15 +3,25 @@
 using System;
 using System.Collections.Generic;
 using KnightsTale.Models;
+using KnightsTale.Repositories;
 
 namespace KnightsTale.Services
 {
 
     public class KnightsService
     {
+
+
+        private readonly KnightsRepository _repo;
+
+        public KnightsService(KnightsRepository repo)
+        {
+            _repo = repo;
+        }
+
         internal List<Knight> Get()
         {
-            throw new NotImplementedException();
+
         }
 
         internal Knight Get(int id)
