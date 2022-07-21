@@ -38,6 +38,7 @@ namespace KnightsTale
 
 
             services.AddTransient<KnightsService>();
+            services.AddTransient<KnightsRepository>();
         }
 
         private void ConfigureCors(IServiceCollection services)
