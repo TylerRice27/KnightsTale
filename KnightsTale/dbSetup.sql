@@ -6,13 +6,13 @@ CREATE TABLE
         name varchar(255) COMMENT 'User Name',
         email varchar(255) COMMENT 'User Email',
         picture varchar(255) COMMENT 'User Picture'
-    ) default charset utf8 COMMENT '';
+    ) default charset utf8;
 
 CREATE TABLE
     IF NOT EXISTS knights(
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-        updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         name VARCHAR(255) NOT NULL,
         weapon VARCHAR(255) NOT NULL,
         creatorId VARCHAR(255) NOT NULL,

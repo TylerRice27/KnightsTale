@@ -20,10 +20,10 @@ namespace KnightsTale.Repositories
         {
             string sql = @"
           SELECT
-          k.*
+          k.*,
           acts.*
           FROM knights k
-          JOIN accounts acts on acts.id = k.creatorId
+          JOIN accounts acts ON acts.id = k.creatorId
         ";
 
             return _db.Query<Knight, Profile, Knight>(sql, (knight, profile) =>
