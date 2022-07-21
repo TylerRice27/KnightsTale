@@ -33,6 +33,14 @@ INSERT INTO knights (name, weapon) VALUES ("Sir Owen", "Mace");
 
 INSERT INTO castles (name) VALUES ("Raven's Bluff ");
 
+INSERT INTO
+    accounts (name, email, picture)
+VALUES (
+        "Ty",
+        "ty123@aol.com",
+        "https//:thiscatdoesnotexist.com"
+    );
+
 /* Get ALL */
 
 SELECT * FROM knights;
@@ -76,5 +84,7 @@ DELETE FROM castles WHERE id=1 LIMIT 1;
 DELETE FROM knights;
 
 /* Remove entire table and all data*/
+
+DROP TABLE accounts;
 
 DROP TABLE knights;
